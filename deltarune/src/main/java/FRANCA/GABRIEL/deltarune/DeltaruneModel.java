@@ -1,15 +1,23 @@
 package FRANCA.GABRIEL.deltarune;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "tb_cadastro_de_deltarune")
 public class DeltaruneModel {
-    String nome;
-    String especi;
-    int idade;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String email;
+    private int idade;
 
     public DeltaruneModel() {
     }
-    public DeltaruneModel(String nome, String especi, int idade){
+    public DeltaruneModel(String nome, String email, int idade){
         this.nome = nome;
-        this.especi = especi;
+        this.email = email;
         this.idade = idade;
 
     }
@@ -22,12 +30,12 @@ public class DeltaruneModel {
         this.nome = nome;
     }
 
-    public String getEspeci() {
-        return especi;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEspeci(String especi) {
-        this.especi = especi;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public int getIdade() {
@@ -38,4 +46,3 @@ public class DeltaruneModel {
         this.idade = idade;
     }
 }
-
