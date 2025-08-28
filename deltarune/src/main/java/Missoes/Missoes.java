@@ -3,11 +3,17 @@ package Missoes;
 
 import FRANCA.GABRIEL.deltarune.DeltaruneModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_Missoes_Deltarune  ")
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 
 
 public class Missoes {

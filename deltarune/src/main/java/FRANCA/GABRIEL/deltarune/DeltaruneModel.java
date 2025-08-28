@@ -1,12 +1,20 @@
 package FRANCA.GABRIEL.deltarune;
 
 import Missoes.Missoes;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro_de_deltarune")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class DeltaruneModel {
 
     @Id
@@ -25,11 +33,11 @@ public class DeltaruneModel {
     public DeltaruneModel() {
     }
 
-    public DeltaruneModel(String nome, String email, int idade){
+    public DeltaruneModel(String nome, String email, int idade, Missoes missoes){
         this.nome = nome;
         this.email = email;
         this.idade = idade;
-
+        this.missoes = missoes;
     }
 
     public String getNome() {
