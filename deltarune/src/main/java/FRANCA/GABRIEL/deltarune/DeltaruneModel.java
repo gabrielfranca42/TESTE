@@ -1,6 +1,9 @@
 package FRANCA.GABRIEL.deltarune;
 
+import Missoes.Missoes;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro_de_deltarune")
@@ -9,12 +12,19 @@ public class DeltaruneModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String email;
+
     private int idade;
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")//foreing Key
+    private Missoes missoes;
 
     public DeltaruneModel() {
     }
+
     public DeltaruneModel(String nome, String email, int idade){
         this.nome = nome;
         this.email = email;
